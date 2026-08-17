@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Saturn Estates — Exceptional Living</title>
+
+<meta
+    name="description"
+    content="Saturn Estates — A refined perspective on exceptional spaces, architecture and modern living."
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --black: #090908;
+    --dark: #0e0e0c;
+    --surface: #141411;
+    --surface-2: #1a1a16;
+
+    --white: #f5f1e8;
+    --muted: #aaa69c;
+
+    --gold: #c7a96b;
+    --gold-light: #e1c991;
+
+    --border: rgba(255,255,255,0.10);
+    --gold-border: rgba(199,169,107,0.35);
+
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "DM Sans", Arial, sans-serif;
+
+    --container: 1240px;
+    --nav-height: 82px;
+
+    --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+
+    font-family: var(--sans);
+    font-weight: 300;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+::selection {
+    background: var(--gold);
+    color: #111;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.container {
+    width: min(var(--container), calc(100% - 48px));
+    margin-inline: auto;
+}
+
+section {
+    padding: 120px 0;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.eyebrow::before {
+    content: "";
+
+    width: 30px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+.serif {
+    font-family: var(--serif);
+}
+
+
+/* =========================================================
+   PRELOADER
+========================================================= */
+
+.preloader {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--black);
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader {
+    text-align: center;
+}
+
+.loader-symbol {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 20px;
+
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+
+    position: relative;
+
+    animation: spin 2.2s linear infinite;
+}
+
+.loader-symbol::before {
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+    height: 18px;
+
+    left: -7px;
+    top: 19px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 50%;
+
+    transform: rotate(-18deg);
+}
+
+.loader span {
+    font-size: 9px;
+    letter-spacing: 4px;
+
+    color: var(--gold);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: var(--nav-height);
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+
+    transition:
+        background .4s ease,
+        border .4s ease;
+}
+
+.header.scrolled {
+    background: rgba(9,9,8,.88);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.nav {
+    width: min(var(--container), calc(100% - 48px));
+
+    margin-inline: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.logo-symbol {
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 50%;
+
+    position: relative;
+
+    transform: rotate(-10deg);
+}
+
+.logo-symbol::after {
+    content: "";
+
+    position: absolute;
+
+    width: 45px;
+    height: 13px;
+
+    top: 9px;
+    left: -7px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 50%;
+
+    transform: rotate(-18deg);
+}
+
+.logo-text {
+    font-family: var(--serif);
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+
+    line-height: 1;
+}
+
+.logo-text small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--gold);
+
+    font-family: var(--sans);
+
+    font-size: 7px;
+
+    letter-spacing: 4px;
+}
+
+
+/* NAVIGATION */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #d5d0c6;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    transition: color .3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: width .35s var(--ease);
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* CTA */
+
+.nav-button {
+    padding: 11px 20px;
+
+    border: 1px solid var(--gold-border);
+
+    color: var(--white);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+.nav-button:hover {
+    background: var(--gold);
+    color: #111;
+}
+
+
+/* MOBILE BUTTON */
+
+.menu-button {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border);
+
+    background: transparent;
+}
+
+.menu-button span,
+.menu-button span::after {
+    content: "";
+
+    position: absolute;
+
+    width: 17px;
+    height: 1px;
+
+    background: white;
+
+    left: 12px;
+}
+
+.menu-button span {
+    top: 16px;
+}
+
+.menu-button span::after {
+    left: 0;
+    top: 7px;
+}
+
+
+/* MOBILE MENU */
+
+.mobile-menu {
+    position: fixed;
+
+    inset: var(--nav-height) 0 0;
+
+    z-index: 999;
+
+    padding: 25px;
+
+    background: rgba(9,9,8,.98);
+
+    transform: translateX(100%);
+
+    transition: transform .45s var(--ease);
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.mobile-menu a {
+    display: block;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    font-family: var(--serif);
+
+    font-size: 28px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100svh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,4,.93) 0%,
+            rgba(5,5,4,.68) 48%,
+            rgba(5,5,4,.25) 100%
+        ),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+
+    transform: scale(1.05);
+
+    animation: heroZoom 10s ease forwards;
+}
+
+@keyframes heroZoom {
+    from {
+        transform: scale(1.09);
+    }
+
+    to {
+        transform: scale(1.02);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(var(--container), calc(100% - 48px));
+
+    margin-inline: auto;
+
+    padding-top: 60px;
+}
+
+.hero-copy {
+    max-width: 760px;
+}
+
+.hero h1 {
+    margin-top: 28px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(52px, 7.5vw, 105px);
+
+    font-weight: 400;
+
+    line-height: .96;
+
+    letter-spacing: -4px;
+}
+
+.hero h1 em {
+    color: var(--gold-light);
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 500px;
+
+    margin-top: 30px;
+
+    color: #c2bdb3;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 13px;
+
+    margin-top: 38px;
+}
+
+.button {
+    min-height: 48px;
+
+    padding: 0 24px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition:
+        transform .35s var(--ease),
+        background .35s ease,
+        border-color .35s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button-primary {
+    background: var(--gold);
+
+    color: #111;
+}
+
+.button-primary:hover {
+    background: var(--gold-light);
+}
+
+.button-outline {
+    border: 1px solid rgba(255,255,255,.25);
+
+    color: white;
+}
+
+.button-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.hero-bottom {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 0;
+    right: 0;
+
+    z-index: 2;
+
+    width: min(var(--container), calc(100% - 48px));
+
+    margin-inline: auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-location,
+.scroll-indicator {
+    color: #aaa69c;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.scroll-indicator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.scroll-line {
+    width: 45px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    background: var(--black);
+}
+
+.intro-grid {
+    display: grid;
+
+    grid-template-columns: .65fr 1.35fr;
+
+    gap: 100px;
+}
+
+.intro h2 {
+    font-family: var(--serif);
+
+    font-size: clamp(43px, 5.5vw, 72px);
+
+    font-weight: 400;
+
+    line-height: 1.03;
+}
+
+.intro-copy p {
+    max-width: 720px;
+
+    margin-top: 28px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+.signature {
+    margin-top: 35px;
+
+    color: var(--gold);
+
+    font-family: var(--serif);
+
+    font-size: 22px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   PRINCIPLES
+========================================================= */
+
+.principles {
+    background: var(--dark);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    gap: 50px;
+
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    margin-top: 20px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+.section-header > p {
+    max-width: 360px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.principle-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.principle {
+    padding: 40px 35px;
+
+    border-right: 1px solid var(--border);
+}
+
+.principle:last-child {
+    border-right: none;
+}
+
+.principle-number {
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.principle h3 {
+    margin-top: 60px;
+
+    font-family: var(--serif);
+
+    font-size: 32px;
+
+    font-weight: 400;
+}
+
+.principle p {
+    margin-top: 14px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   VISUAL COLLECTION
+========================================================= */
+
+.collection {
+    background: var(--black);
+}
+
+.collection-grid {
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+
+    gap: 20px;
+}
+
+.collection-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    min-height: 500px;
+}
+
+.collection-card:nth-child(1) {
+    grid-column: span 7;
+}
+
+.collection-card:nth-child(2) {
+    grid-column: span 5;
+}
+
+.collection-card:nth-child(3) {
+    grid-column: span 5;
+}
+
+.collection-card:nth-child(4) {
+    grid-column: span 7;
+}
+
+.collection-image {
+    position: absolute;
+    inset: 0;
+}
+
+.collection-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 1s var(--ease);
+}
+
+.collection-card:hover img {
+    transform: scale(1.06);
+}
+
+.collection-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.82),
+            transparent 65%
+        );
+}
+
+.collection-tag {
+    align-self: flex-start;
+
+    margin-bottom: auto;
+
+    padding: 7px 11px;
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    color: white;
+
+    background: rgba(0,0,0,.2);
+
+    backdrop-filter: blur(8px);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.collection-title {
+    font-family: var(--serif);
+
+    font-size: 32px;
+
+    font-weight: 400;
+}
+
+.collection-description {
+    margin-top: 7px;
+
+    color: #c6c1b7;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   STANDARD
+========================================================= */
+
+.standard {
+    background: var(--dark);
+}
+
+.standard-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 110px;
+
+    align-items: center;
+}
+
+.standard-image {
+    height: 620px;
+
+    overflow: hidden;
+}
+
+.standard-image img {
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.standard-content h2 {
+    margin-top: 20px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(44px, 5vw, 70px);
+
+    font-weight: 400;
+
+    line-height: 1.02;
+}
+
+.standard-content h2 em {
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+.standard-content > p {
+    margin-top: 28px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.standard-list {
+    margin-top: 42px;
+}
+
+.standard-item {
+    display: flex;
+
+    gap: 18px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.standard-number {
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.standard-item h3 {
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+.standard-item p {
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+    background: var(--black);
+}
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1px;
+
+    background: var(--border);
+
+    border: 1px solid var(--border);
+}
+
+.service {
+    min-height: 290px;
+
+    padding: 40px 35px;
+
+    background: var(--black);
+
+    transition: background .4s ease;
+}
+
+.service:hover {
+    background: var(--surface);
+}
+
+.service-number {
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.service h3 {
+    margin-top: 60px;
+
+    font-family: var(--serif);
+
+    font-size: 29px;
+
+    font-weight: 400;
+}
+
+.service p {
+    margin-top: 14px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+    min-height: 550px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(5,5,4,.72),
+            rgba(5,5,4,.82)
+        ),
+        url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+}
+
+.cta-content {
+    max-width: 760px;
+}
+
+.cta h2 {
+    margin-top: 22px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(46px, 6vw, 82px);
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+.cta h2 em {
+    color: var(--gold-light);
+
+    font-style: italic;
+}
+
+.cta p {
+    max-width: 500px;
+
+    margin-top: 25px;
+
+    color: #c5c0b7;
+
+    font-size: 14px;
+}
+
+.cta .button {
+    margin-top: 32px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    background: var(--dark);
+}
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 110px;
+}
+
+.contact-info h2 {
+    margin-top: 20px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(44px, 5vw, 68px);
+
+    font-weight: 400;
+
+    line-height: 1.02;
+}
+
+.contact-info > p {
+    max-width: 430px;
+
+    margin-top: 25px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.contact-details {
+    margin-top: 45px;
+
+    display: grid;
+
+    gap: 22px;
+}
+
+.contact-item small {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--gold);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.contact-item span {
+    color: #d6d1c7;
+
+    font-size: 13px;
+}
+
+
+/* FORM */
+
+.contact-form {
+    display: grid;
+
+    gap: 20px;
+}
+
+.field {
+    position: relative;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+
+    padding: 17px 0;
+
+    background: transparent;
+
+    border: 0;
+
+    border-bottom: 1px solid var(--border);
+
+    outline: none;
+
+    color: white;
+
+    font-size: 13px;
+
+    transition: border .3s ease;
+}
+
+.field textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: var(--gold);
+}
+
+.field label {
+    position: absolute;
+
+    top: 17px;
+    left: 0;
+
+    color: #77746d;
+
+    font-size: 12px;
+
+    pointer-events: none;
+
+    transition: all .3s ease;
+}
+
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label,
+.field textarea:focus + label,
+.field textarea:not(:placeholder-shown) + label {
+    top: -4px;
+
+    color: var(--gold);
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 35px 0;
+
+    border-top: 1px solid var(--border);
+
+    background: var(--black);
+}
+
+.footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+
+    color: #77746d;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+.footer-brand {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s var(--ease);
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        gap: 22px;
+    }
+
+    .intro-grid,
+    .standard-grid,
+    .contact-grid {
+        gap: 60px;
+    }
+
+    .standard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .standard-image {
+        height: 500px;
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    :root {
+        --nav-height: 70px;
+    }
+
+    .container,
+    .nav,
+    .hero-content,
+    .hero-bottom {
+        width: min(100% - 32px, var(--container));
+    }
+
+    section {
+        padding: 80px 0;
+    }
+
+    .nav-links,
+    .nav-button {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+
+        position: relative;
+    }
+
+    .hero-background {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(5,5,4,.9),
+                rgba(5,5,4,.5)
+            ),
+            url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85")
+            center / cover;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+    }
+
+    .hero-bottom {
+        bottom: 18px;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .section-header {
+        display: block;
+    }
+
+    .section-header > p {
+        margin-top: 22px;
+    }
+
+    .principle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .principle {
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .principle:last-child {
+        border-bottom: none;
+    }
+
+    .collection-grid {
+        display: block;
+    }
+
+    .collection-card {
+        min-height: 430px;
+
+        margin-bottom: 18px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service {
+        min-height: 240px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-actions .button {
+        width: 100%;
+    }
+
+    .collection-card {
+        min-height: 390px;
+    }
+
+    .collection-title {
+        font-size: 27px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     PRELOADER
+========================================================= -->
+
+<div class="preloader" id="preloader">
+
+    <div class="loader">
+
+        <div class="loader-symbol"></div>
+
+        <span>SATURN ESTATES</span>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header" id="header">
+
+    <nav class="nav">
+
+
+        <a href="#home" class="logo">
+
+            <div class="logo-symbol"></div>
+
+            <div class="logo-text">
+
+                SATURN
+
+                <small>ESTATES</small>
+
+            </div>
+
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#collection">Collection</a>
+            </li>
+
+            <li>
+                <a href="#standard">Vision</a>
+            </li>
+
+            <li>
+                <a href="#services">Services</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+
+        <a
+            href="#contact"
+            class="nav-button"
+        >
+            Connect
+        </a>
+
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open menu"
+        >
+            <span></span>
+        </button>
+
+    </nav>
+
+</header>
+
+
+<!-- MOBILE NAV -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="#about">About</a>
+
+    <a href="#collection">Collection</a>
+
+    <a href="#standard">Vision</a>
+
+    <a href="#services">Services</a>
+
+    <a href="#contact">Contact</a>
+
+</div>
+
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-background"></div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-copy reveal">
+
+            <div class="eyebrow">
+                Exceptional Real Estate
+            </div>
+
+
+            <h1>
+                Spaces with
+                <em>presence.</em>
+            </h1>
+
+
+            <p class="hero-description">
+                Saturn Estates is a refined real estate brand
+                built around exceptional spaces, thoughtful
+                architecture and a more considered approach
+                to modern living.
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#collection"
+                    class="button button-primary"
+                >
+                    Explore our vision
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="button button-outline"
+                >
+                    Start a conversation
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-bottom">
+
+        <div class="hero-location">
+            Luxury Real Estate
+        </div>
+
+
+        <div class="scroll-indicator">
+
+            <div class="scroll-line"></div>
+
+            Discover Saturn
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="intro" id="about">
+
+    <div class="container">
+
+        <div class="intro-grid">
+
+
+            <div class="reveal">
+
+                <div class="eyebrow">
+                    The Saturn Vision
+                </div>
+
+            </div>
+
+
+            <div class="intro-copy reveal">
+
+                <h2>
+                    A more considered
+                    <span class="serif">
+                        approach to living.
+                    </span>
+                </h2>
+
+
+                <p>
+                    Saturn Estates is built around a simple idea:
+                    exceptional spaces deserve an equally
+                    exceptional approach.
+                </p>
+
+
+                <p>
+                    We are drawn to distinctive architecture,
+                    refined interiors, meaningful locations and
+                    the quiet details that transform a property
+                    into something memorable.
+                </p>
+
+
+                <div class="signature">
+                    Saturn Estates
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PRINCIPLES
+========================================================= -->
+
+<section class="principles">
+
+    <div class="container">
+
+
+        <div class="section-header reveal">
+
+            <div>
+
+                <div class="eyebrow">
+                    Our Principles
+                </div>
+
+                <h2>
+                    Designed around
+                    <br>
+                    what matters.
+                </h2>
+
+            </div>
+
+
+            <p>
+                A philosophy rooted in restraint, detail and
+                an appreciation for spaces that stand apart.
+            </p>
+
+        </div>
+
+
+        <div class="principle-grid">
+
+
+            <article class="principle reveal">
+
+                <div class="principle-number">
+                    01
+                </div>
+
+                <h3>
+                    Distinctive
+                </h3>
+
+                <p>
+                    We are drawn to spaces with character,
+                    architectural integrity and a genuine
+                    sense of place.
+                </p>
+
+            </article>
+
+
+            <article class="principle reveal">
+
+                <div class="principle-number">
+                    02
+                </div>
+
+                <h3>
+                    Considered
+                </h3>
+
+                <p>
+                    Every detail matters — from the first
+                    impression to the smallest element
+                    of the experience.
+                </p>
+
+            </article>
+
+
+            <article class="principle reveal">
+
+                <div class="principle-number">
+                    03
+                </div>
+
+                <h3>
+                    Timeless
+                </h3>
+
+                <p>
+                    We favour elegance that remains relevant
+                    long after trends have passed.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     COLLECTION / VISUAL WORLD
+========================================================= -->
+
+<section class="collection" id="collection">
+
+    <div class="container">
+
+
+        <div class="section-header reveal">
+
+            <div>
+
+                <div class="eyebrow">
+                    The World of Saturn
+                </div>
+
+                <h2>
+                    Spaces worth
+                    <br>
+                    discovering.
+                </h2>
+
+            </div>
+
+
+            <p>
+                A visual expression of the architecture,
+                interiors and atmosphere that inspire
+                the Saturn Estates perspective.
+            </p>
+
+        </div>
+
+
+        <div class="collection-grid">
+
+
+            <article class="collection-card reveal">
+
+                <div class="collection-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=90"
+                        alt="Contemporary luxury residence"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="collection-overlay">
+
+                    <div class="collection-tag">
+                        Architecture
+                    </div>
+
+
+                    <div>
+
+                        <h3 class="collection-title">
+                            Contemporary Living
+                        </h3>
+
+                        <p class="collection-description">
+                            Clean lines · Natural materials · Quiet luxury
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="collection-card reveal">
+
+                <div class="collection-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=90"
+                        alt="Luxury villa interior"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="collection-overlay">
+
+                    <div class="collection-tag">
+                        Interiors
+                    </div>
+
+
+                    <div>
+
+                        <h3 class="collection-title">
+                            Refined Interiors
+                        </h3>
+
+                        <p class="collection-description">
+                            Texture · Light · Proportion
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="collection-card reveal">
+
+                <div class="collection-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1600&q=90"
+                        alt="Luxury interior architecture"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="collection-overlay">
+
+                    <div class="collection-tag">
+                        Design
+                    </div>
+
+
+                    <div>
+
+                        <h3 class="collection-title">
+                            Modern Heritage
+                        </h3>
+
+                        <p class="collection-description">
+                            Character · Craft · Permanence
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="collection-card reveal">
+
+                <div class="collection-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=90"
+                        alt="Elegant modern home"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="collection-overlay">
+
+                    <div class="collection-tag">
+                        Lifestyle
+                    </div>
+
+
+                    <div>
+
+                        <h3 class="collection-title">
+                            Spaces with Presence
+                        </h3>
+
+                        <p class="collection-description">
+                            Privacy · Atmosphere · Experience
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STANDARD
+========================================================= -->
+
+<section class="standard" id="standard">
+
+    <div class="container">
+
+        <div class="standard-grid">
+
+
+            <div class="standard-image reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=90"
+                    alt="Luxury architectural space"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="standard-content reveal">
+
+                <div class="eyebrow">
+                    The Saturn Standard
+                </div>
+
+
+                <h2>
+                    Less noise.
+                    <br>
+                    More
+                    <em>meaning.</em>
+                </h2>
+
+
+                <p>
+                    Luxury does not need to be loud. Saturn Estates
+                    is inspired by spaces where architecture,
+                    material and atmosphere speak for themselves.
+                </p>
+
+
+                <div class="standard-list">
+
+
+                    <div class="standard-item">
+
+                        <div class="standard-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Thoughtful spaces
+                            </h3>
+
+                            <p>
+                                Architecture with purpose,
+                                proportion and character.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="standard-item">
+
+                        <div class="standard-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Refined experience
+                            </h3>
+
+                            <p>
+                                A calm, personal and considered
+                                approach to real estate.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="standard-item">
+
+                        <div class="standard-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Long-term perspective
+                            </h3>
+
+                            <p>
+                                An appreciation for quality that
+                                extends beyond passing trends.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+
+        <div class="section-header reveal">
+
+            <div>
+
+                <div class="eyebrow">
+                    Our Approach
+                </div>
+
+                <h2>
+                    What we offer.
+                </h2>
+
+            </div>
+
+
+            <p>
+                A focused approach to real estate built around
+                clarity, discretion and an appreciation for
+                exceptional spaces.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <article class="service reveal">
+
+                <div class="service-number">
+                    01
+                </div>
+
+                <h3>
+                    Residential
+                </h3>
+
+                <p>
+                    A considered approach to discovering,
+                    presenting and experiencing distinctive
+                    residential spaces.
+                </p>
+
+            </article>
+
+
+            <article class="service reveal">
+
+                <div class="service-number">
+                    02
+                </div>
+
+                <h3>
+                    Acquisitions
+                </h3>
+
+                <p>
+                    Thoughtful guidance for those seeking
+                    spaces aligned with their lifestyle,
+                    aspirations and perspective.
+                </p>
+
+            </article>
+
+
+            <article class="service reveal">
+
+                <div class="service-number">
+                    03
+                </div>
+
+                <h3>
+                    Advisory
+                </h3>
+
+                <p>
+                    A clear and considered perspective on
+                    property, opportunities and the evolving
+                    world of luxury real estate.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-content reveal">
+
+            <div class="eyebrow">
+                Your next chapter
+            </div>
+
+
+            <h2>
+                Find somewhere
+                <em>extraordinary.</em>
+            </h2>
+
+
+            <p>
+                Have a property in mind, a vision for your next
+                space, or simply want to explore what's possible?
+                Begin a conversation with Saturn Estates.
+            </p>
+
+
+            <a
+                href="#contact"
+                class="button button-primary"
+            >
+                Start a conversation
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+
+            <div class="contact-info reveal">
+
+                <div class="eyebrow">
+                    Contact
+                </div>
+
+
+                <h2>
+                    Let's start
+                    a conversation.
+                </h2>
+
+
+                <p>
+                    Whether you are exploring a property,
+                    considering an opportunity or simply
+                    want to know more about Saturn Estates,
+                    we'd be glad to hear from you.
+                </p>
+
+
+                <!--
+                    Replace these with your real details.
+                -->
+
+                <div class="contact-details">
+
+                    <div class="contact-item">
+
+                        <small>
+                            Email
+                        </small>
+
+                        <span>
+                            YOUR EMAIL
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <small>
+                            Phone
+                        </small>
+
+                        <span>
+                            YOUR PHONE
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <small>
+                            Location
+                        </small>
+
+                        <span>
+                            YOUR LOCATION
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <form
+                class="contact-form reveal"
+                id="contactForm"
+            >
+
+
+                <div class="field">
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder=" "
+                        required
+                    >
+
+                    <label for="name">
+                        Your name
+                    </label>
+
+                </div>
+
+
+                <div class="field">
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder=" "
+                        required
+                    >
+
+                    <label for="email">
+                        Email address
+                    </label>
+
+                </div>
+
+
+                <div class="field">
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder=" "
+                    >
+
+                    <label for="phone">
+                        Phone number
+                    </label>
+
+                </div>
+
+
+                <div class="field">
+
+                    <textarea
+                        id="message"
+                        placeholder=" "
+                        required
+                    ></textarea>
+
+                    <label for="message">
+                        Your message
+                    </label>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="button button-primary"
+                >
+                    Send enquiry
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer">
+
+            <div class="footer-brand">
+                SATURN ESTATES
+            </div>
+
+            <div>
+                © <span id="year"></span> Saturn Estates
+            </div>
+
+            <div>
+                Exceptional spaces. Considered living.
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   PRELOADER
+========================================================= */
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        document
+            .getElementById("preloader")
+            .classList
+            .add("hidden");
+
+    }, 600);
+
+});
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+const header =
+    document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 40) {
+
+        header.classList.add("scrolled");
+
+    } else {
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+
+menuButton.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("active");
+
+});
+
+
+document
+    .querySelectorAll(".mobile-menu a")
+    .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            mobileMenu.classList.remove("active");
+
+        });
+
+    });
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: .12
+        }
+
+    );
+
+
+revealElements.forEach(element => {
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+const contactForm =
+    document.getElementById("contactForm");
+
+
+contactForm.addEventListener("submit", event => {
+
+    event.preventDefault();
+
+    const button =
+        contactForm.querySelector("button");
+
+    const original =
+        button.textContent;
+
+    button.textContent =
+        "Thank you";
+
+    button.style.background =
+        "var(--gold-light)";
+
+    contactForm.reset();
+
+    setTimeout(() => {
+
+        button.textContent =
+            original;
+
+        button.style.background =
+            "";
+
+    }, 3000);
+
+});
+
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* =========================================================
+   HERO PARALLAX
+========================================================= */
+
+const heroBackground =
+    document.querySelector(".hero-background");
+
+
+window.addEventListener("mousemove", event => {
+
+    if (window.innerWidth < 768) return;
+
+    const x =
+        (event.clientX / window.innerWidth - .5) * 5;
+
+    const y =
+        (event.clientY / window.innerHeight - .5) * 3;
+
+
+    heroBackground.style.transform =
+        `scale(1.025) translate(${x}px, ${y}px)`;
+
+});
+
+
+</script>
+
+</body>
+</html>
